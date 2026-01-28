@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Private Diary</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="lock-container">
+    <p class="lock-title">Meri Soch</p>
+
+    <p class="lock-subtitle">
+    Aage Ka Safar Humaare Pyaar Ki Buniyaad Se<br>
+    Ye Lock Ko Mera Dil Samjho<br>
+    Jo Aapke Kuch Shabdo Se Khul Jaata hai
+    </p>
+
+    <input
+      type="password"
+      id="password"
+      class="lock-input"
+      placeholder="••••••••"
+    >
+
+    <button class="open-btn" onclick="unlockDiary()">
+      Unlock
+    </button>
+
+    <p id="error" class="lock-error"></p>
+  </div>
+
+  <script>
+    function unlockDiary() {
+      const correctPassword = "tuhi ki vazu"; // 🔑 CHANGE THIS
+      const entered = document.getElementById("password").value;
+      const error = document.getElementById("error");
+
+      if (entered === correctPassword) {
+        document.body.style.transition = "opacity 1s";
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = "page8.html"; // or page2.html
+        }, 1000);
+      } else {
+        error.textContent = "That’s not it 🤍";
+      }
+    }
+  </script>
+
+</body>
+</html>

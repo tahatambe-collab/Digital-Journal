@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memory Road Map</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="resumeSong()">
+
+  <div class="roadmap-container">
+    <!-- Background Roadmap Image -->
+    <img src="images/roadmaps.png" class="roadmap-bg" alt="Memory Road Map">
+
+    <!-- Memory Photos -->
+    <img src="images/vc.png.png" class="memory college" onclick="openMemory('emotional.html')" alt="SIH">
+
+    
+
+    <img src="images/sick.png" class="memory beach" onclick="openMemory('beach.html')" alt="PROPOSAL">
+
+    <img src="images/kayak.png.png" class="memory family" onclick="openMemory('kayak.html')" alt="THEATRE">
+  </div>
+
+  <!-- NEXT ROADMAP BUTTON -->
+  <button class="open-btn roadmap-next" onclick="goNextRoad()">
+    Continue the journey
+  </button>
+
+  <script src="music.js"></script>
+  <script>
+    function openMemory(page) {
+      document.body.style.transition = "opacity 1s";
+      document.body.style.opacity = "0";
+      setTimeout(() => {
+        window.location.href = page;
+      }, 1000);
+    }
+
+    function goNextRoad() {
+      document.body.style.transition = "opacity 1s";
+      document.body.style.opacity = "0";
+      setTimeout(() => {
+        window.location.href = "page6.html";
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>

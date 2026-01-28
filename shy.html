@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It’s Okay</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f6e9e4;
+      background-image: radial-gradient(#f9f1ed 1px, transparent 1px);
+      background-size: 20px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Playfair Display', serif;
+      transition: opacity 1.8s ease;
+    }
+
+    .comic-panel {
+      position: relative;
+      width: 92%;
+      max-width: 1100px;
+    }
+
+    .comic-img {
+      width: 100%;
+      border-radius: 14px;
+      animation: slowZoom 20s ease-in-out forwards;
+    }
+
+    .bubble {
+      position: absolute;
+      background: rgba(255,255,255,0.97);
+      padding: 14px 20px;
+      border-radius: 22px;
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0;
+      max-width: 280px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+      animation: fadeUp 1.3s ease forwards;
+    }
+
+    .bubble.left {
+      top: 28%;
+      left: 6%;
+      animation-delay: 1.6s;
+    }
+
+    .bubble.right {
+      top: 32%;
+      right: 6%;
+      animation-delay: 4.2s;
+    }
+
+    .bubble.center {
+      bottom: 9%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 6.8s;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .heart {
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 28px;
+      opacity: 0;
+      animation: heartPulse 3.2s ease-in-out infinite;
+      animation-delay: 5.8s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    @keyframes heartPulse {
+      0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.1);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="comic-panel">
+
+    <!-- IMAGE -->
+    <img src="images/shy.png" alt="It’s Okay" class="comic-img">
+
+    <!-- HEART -->
+    <div class="heart"></div>
+
+    <!-- CONVERSATION -->
+    <div class="bubble left">
+      It’s okay…<br>
+      Look at me, not the world.
+    </div>
+
+    <div class="bubble right">
+      Why do you hide like this,<br>
+      when you look so beautiful?
+    </div>
+
+    <div class="bubble center">
+      In a noisy world,<br>
+      I’ll always be your calm.
+    </div>
+
+  </div>
+
+  <!-- AUTO MOVE TO NEXT PAGE -->
+  <script>
+    setTimeout(() => {
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+        window.location.href = "walktomas.html";
+        // 🔁 change if needed
+      }, 1800);
+
+    }, 9500);
+  </script>
+
+</body>
+</html>

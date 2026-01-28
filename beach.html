@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Through It All</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f6e9e4;
+      background-image: radial-gradient(#f9f1ed 1px, transparent 1px);
+      background-size: 20px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Playfair Display', serif;
+      transition: opacity 1.8s ease;
+    }
+
+    /* ===== COMIC PANEL ===== */
+
+    .comic-panel {
+      position: relative;
+      width: 92%;
+      max-width: 1100px;
+    }
+
+    .comic-img {
+      width: 100%;
+      border-radius: 14px;
+      animation: slowZoom 20s ease-in-out forwards;
+    }
+
+    /* ===== SPEECH BUBBLES ===== */
+
+    .bubble {
+      position: absolute;
+      background: rgba(255,255,255,0.97);
+      padding: 14px 20px;
+      border-radius: 22px;
+      font-size: 14px;
+      line-height: 1.7;
+      opacity: 0;
+      max-width: 280px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+      animation: fadeUp 1.3s ease forwards;
+    }
+
+    .bubble.left {
+      top: 28%;
+      left: 6%;
+      animation-delay: 1.6s;
+    }
+
+    .bubble.right {
+      top: 28%;
+      right: 6%;
+      animation-delay: 4.2s;
+    }
+
+    .bubble.center {
+      bottom: 8%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 6.8s;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ===== HEART ===== */
+
+    .heart {
+      position: absolute;
+      top: 46%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      opacity: 0;
+      animation: heartPulse 3.2s ease-in-out infinite;
+      animation-delay: 5.8s;
+      animation-fill-mode: forwards;
+    }
+
+    /* ===== ANIMATIONS ===== */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(32px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    @keyframes heartPulse {
+      0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        transform: translateX(-50%) scale(1.12);
+      }
+      100% {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="comic-panel">
+
+    <!-- IMAGE -->
+    <img src="images/sickness.png" alt="Through Sickness" class="comic-img">
+
+    <!-- HEART -->
+    <div class="heart"></div>
+
+    <!-- CONVERSATION -->
+    <div class="bubble left">
+      I wish I could take<br>
+      your pain instead.
+    </div>
+
+    <div class="bubble right">
+      But sitting here together<br>
+      already makes it lighter.
+    </div>
+
+    <div class="bubble center">
+      Love isn’t only in happy days.<br>
+      It’s staying — even when it hurts.
+    </div>
+
+  </div>
+
+  <!-- AUTO MOVE TO NEXT PAGE -->
+  <script>
+    setTimeout(() => {
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+        window.location.href = "dosahh.html";
+        /* 🔁 change if needed */
+      }, 1800);
+
+    }, 9500);
+  </script>
+
+</body>
+</html>

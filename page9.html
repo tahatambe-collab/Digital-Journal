@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How I See You</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body onload="startReveal(); resumeSong()">
+
+  <main class="snap-container">
+
+    <!-- FIRST FRAME -->
+    <section class="snap-section">
+      <img src="images/her.jpeg" class="snap-img reveal-image" id="revealImage">
+      <p class="reveal-text" id="revealText">In zulfon ke peeche chupa husn, dekhte hi milta hai sukun</p>
+    </section>
+
+    <!-- SECOND FRAME -->
+    <section class="snap-section">
+      <img src="images/eyes.jpeg" class="snap-img">
+      <p class="reveal-text">In aakhon mai basi maasumiyat,dikhaati hai aapke swabhaav ki Nazaakat</p>
+    </section>
+
+    <!-- THIRD FRAME -->
+    <section class="snap-section">
+      <img src="images/abaya.jpeg" class="snap-img">
+      <p class="reveal-text" id="revealText">Jab dekha aapko iss roop mai, doobne lagu aapke chehre ke raunak ke dhoop mai</p>
+    </section>
+
+    <!-- FOURTH FRAME -->
+    <section class="snap-section">
+      <img src="images/guccha.jpeg" class="snap-img">
+      <p class="reveal-text" id="revealText">Jab bhi aap hue mujhse Guccha, tab dikhta hai aapka pyaar saccha</p>
+    </section>
+
+    <section class="snap-section">
+      <img src="images/height.jpeg" class="snap-img">
+      <p class="reveal-text" id="revealText">Yaa fir Lago aap mujhse chhote, par aata hu aapke paas jab mere ye aakhe rote</p>
+    </section>
+
+    <section class="snap-section">
+      <img src="images/feel.jpeg" class="snap-img">
+    </section>
+
+  </main>
+
+  <script src="music.js"></script>
+  <script>
+    function startReveal() {
+      const img = document.getElementById("revealImage");
+      const texts = document.querySelectorAll(".reveal-text");
+
+texts.forEach((text, index) => {
+  setTimeout(() => {
+    text.classList.add("show");
+  }, 4500 + index * 1000); // staggered reveal
+});
+
+
+      setTimeout(() => img.classList.add("clear"), 1500);
+      setTimeout(() => text.classList.add("show"), 4500);
+    }
+  </script>
+  <script>
+  const snapImages = document.querySelectorAll('.snap-img');
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    },
+    {
+      threshold: 0.6
+    }
+  );
+
+  snapImages.forEach(img => observer.observe(img));
+</script>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("nextBtn").style.opacity = "1";
+  }, 2000  ); // appears after 25s
+</script>
+
+
+<div id="nextBtn" style="
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0;
+  transition: opacity 1s ease;
+">
+  <a href="video.html" style="
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    background: #000;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 30px;
+  ">
+    Continue →
+  </a>
+</div>
+
+
+
+</body>
+</html>

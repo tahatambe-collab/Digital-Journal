@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Diary</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="cover-page" onclick="openDiary()">
+    <div class="cover-content">
+      <p class="cover-title">Meri Soch</p>
+      <p class="cover-subtitle">Written only for you</p>
+    </div>
+  </div>
+
+  <script>
+    function openDiary() {
+      document.body.style.transition = "opacity 1.2s";
+      document.body.style.opacity = "0";
+      setTimeout(() => {
+        window.location.href = "page-inside.html"; 
+      }, 1200);
+    }
+  </script>
+
+</body>
+</html>

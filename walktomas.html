@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Together in Faith</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="snap-container">
+
+  <!-- MASJID FRAME -->
+  <section class="snap-section">
+    <img src="images/masjid.png.png" class="snap-img reveal-image" id="revealImage">
+
+    <!-- Optional text (remove if not needed) -->
+    <p class="reveal-text">
+      Duaon ke saath jo haath thame ho,  
+      wahi rishta sabse khoobsurat hota hai
+    </p>
+  </section>
+
+</main>
+
+<script>
+  function startReveal() {
+    const img = document.getElementById("revealImage");
+    const text = document.querySelector(".reveal-text");
+
+    setTimeout(() => img.classList.add("clear"), 1200);
+    if (text) {
+      setTimeout(() => text.classList.add("show"), 3000);
+    }
+  }
+
+  window.onload = startReveal;
+
+  // Scroll snap animation
+  const snapImages = document.querySelectorAll('.snap-img');
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  snapImages.forEach(img => observer.observe(img));
+</script>
+
+<script>
+    setTimeout(() => {
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+        window.location.href = "friedc.html"; 
+        /* 🔁 change next page if needed */
+      }, 1800);
+
+    }, 9500);
+  </script>
+
+</body>
+</html>

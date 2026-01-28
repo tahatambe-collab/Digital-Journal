@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: #f6e9e4;
+  background-image: radial-gradient(#f9f1ed 1px, transparent 1px);
+  background-size: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  color: #5a4a4a;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+/* Top small text */
+.top-text {
+  letter-spacing: 4px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Main calligraphy word */
+.main-word {
+  font-family: 'Great Vibes', cursive;
+  font-size: 110px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Button */
+.open-btn {
+  background: transparent;
+  border: 1px solid #b89b8f;
+  padding: 12px 28px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #5a4a4a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.open-btn:hover {
+  background-color: #b89b8f;
+  color: white;
+}
+
+/* Animations */
+.fade {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.fade-delay {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1.5s;
+}
+
+.fade-delay-2 {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 3s;
+}
+
+.fade-delay-3 {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 4.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== PAGE 2 ===== */
+
+.page2-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+.romantic-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  text-align: center;
+  line-height: 1.8;
+  color: #5a4a4a;
+  max-width: 800px;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* ===== PAGE 3 (MUSIC CHOICE) ===== */
+
+.page3-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px;
+}
+
+.music-text {
+  font-size: 22px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+}
+
+.music-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== PAGE 4 : MEMORY ROAD MAP ===== */
+
+.roadmap-container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  overflow: hidden; /* ✅ hides anything behind */
+}
+
+.roadmap-bg {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+/* Memory photos */
+.memory {
+  position: absolute;
+  width: 140px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  background: #ffffff; /* ✅ hides roadmap behind */
+  overflow: hidden;    /* ✅ clips background */
+  z-index: 5;          /* ✅ above roadmap */
+}
+
+.memory:hover {
+  transform: scale(1.08);
+  z-index: 10; /* ✅ bring hovered card on top */
+}
+
+/* Adjust these positions visually */
+.college { top: 28%; left: 8%; }
+.dinner  { top: 40%; left: 55%; }
+.beach   { top: 65%; left: 18%; }
+.family  { top: 55%; left: 75%; }
+
+.roadmap-next {
+  display: block;
+  margin: 40px auto 0;
+}
+/* ===== LOCK SCREEN ===== */
+
+.lock-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.lock-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.lock-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.lock-input {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #b89b8f;
+  background: transparent;
+  color: #5a4a4a;
+  outline: none;
+  text-align: center;
+  margin-bottom: 30px;
+  width: 220px;
+}
+
+.lock-error {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #a15c5c;
+}
+/* ===== DIARY COVER PAGE ===== */
+
+.cover-page {
+  width: 360px;
+  height: 520px;
+  background: linear-gradient(135deg, #b89b8f, #d6bfb3);
+  border-radius: 10px;
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.2),
+    inset 0 0 30px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cover-content {
+  text-align: center;
+  color: white;
+}
+
+.cover-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.cover-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+/* ===== OPEN BOOK (LEFT & RIGHT PAGES) ===== */
+
+.book-open {
+  display: flex;
+  width: 900px;
+  height: 500px;
+  background: #fdf6f0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Common page style */
+.book-page {
+  width: 50%;
+  height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* LEFT PAGE */
+.left-page {
+  border-right: 1px solid #e0d0c4;
+}
+
+.left-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* RIGHT PAGE */
+.right-page {
+  font-family: 'Great Vibes', cursive;
+  font-size: 28px;
+  line-height: 1.9;
+  display: flex;
+  align-items: center;
+}
+/* ===== PAGE FLIP BOOK ===== */
+
+.book-container {
+  perspective: 2500px;
+}
+
+.book {
+  width: 900px;
+  height: 500px;
+  display: flex;
+}
+
+.page {
+  width: 50%;
+  height: 100%;
+  background: #fdf6f0;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+/* LEFT PAGE */
+.left-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT PAGE */
+.right-page {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  line-height: 1.9;
+  transform-origin: left;
+  transition: transform 1s ease;
+}
+
+/* FLIP EFFECT */
+.right-page.flip {
+  transform: rotateY(-180deg);
+}
+
+/* NEXT BUTTON */
+.next-btn {
+  margin-top: 30px;
+}
+/* ===== PAGE 9 : PHOTO REVEAL ===== */
+
+.reveal-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal-image {
+  width: 320px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: blur(20px);
+  transition: filter 3s ease;
+}
+
+/* Image becomes clear */
+.reveal-image.clear {
+  filter: blur(0);
+}
+
+.reveal-text {
+  margin-top: 40px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+/* Text appears */
+.reveal-text.show {
+  opacity: 1;
+}
+/* ===== PAGE 9 : SNAP SCROLL (ONE IMAGE PER FRAME) ===== */
+
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+
+  /* Hide scrollbar */
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE/Edge */
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari */
+}
+
+
+.snap-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Images in each frame */
+.snap-img {
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+
+  /* animation start state */
+  transform: translateY(60px);
+  opacity: 0;
+
+  transition:
+    transform 1.2s ease,
+    opacity 1.2s ease;
+}
+
+/* When image is active */
+.snap-img.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+

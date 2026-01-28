@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diary</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="book-container">
+    <div class="book">
+
+      <!-- LEFT PAGE (STATIC) -->
+      <div class="page left-page">
+        <img id="leftImage" src="images/memory1.png">
+      </div>
+
+      <!-- RIGHT PAGE (FLIPPABLE) -->
+      <div class="page right-page" id="rightPage">
+        <p id="rightText">
+           "Divine Love in Marriage
+"And among His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought."
+(Qur’an 30:21)
+
+
+
+
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="open-btn next-btn" onclick="flipPage()">Next</button>
+
+  <script>
+    let pageIndex = 0;
+
+    const pages = [
+      {
+        image: "images/memory1.png",
+        text: "Divine Love in Marriage And among His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought.(Qur'an 30:21)"
+
+      },
+      {
+        image: "images/praying.png",
+        text: "Our Lord, grant us from among our spouses and offspring comfort to our eyes and make us an example for the righteous.<br>Qur'an(25:74)"
+
+
+      },
+      {
+        image: "images/cleaning.png",
+        text: "Men are responsible for the care and maintenance of women, as Allah has given some more responsibility than others and because they spend from their means.<br>Qur'an(4:34)"
+      },
+      {
+        image: "images/driving.png",
+        text: "Just like we always imagine, I always want to have that long drive with you with the most romantic song playing in our playlist."
+      },
+      {
+        image: "images/rose.jpeg",
+        text: "Yaade Toh Kaafi Saari Hai, Aur Aage bhi  Inshaallah Banengi, Bas Saath Chahiye Tera Iss Manzil Tak Pohochne Mai Bas Tu Ban Meri Humsafar"
+      }
+    ];
+
+    function flipPage() {
+  const page = document.getElementById("rightPage");
+
+  // IF this is the last page → redirect
+  if (pageIndex >= pages.length - 1) {
+    document.body.style.transition = "opacity 1s";
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+      window.location.href = "page9.html"; // 🔁 CHANGE if needed
+    }, 1000);
+
+    return;
+  }
+
+  // OTHERWISE → normal page flip
+  page.classList.add("flip");
+
+  setTimeout(() => {
+    pageIndex = pageIndex + 1;
+    document.getElementById("leftImage").src = pages[pageIndex].image;
+    document.getElementById("rightText").innerHTML = pages[pageIndex].text;
+    page.classList.remove("flip");
+  }, 1000);
+}
+
+  </script>
+
+</body>
+</html>

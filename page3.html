@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose a Song</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page3-container">
+    <p class="music-text">
+      Choose a song<br>
+      and let it stay with you<br>
+      through these pages
+    </p>
+
+    <div class="music-options">
+      <button class="open-btn" onclick="playSelectedSong('music/song1.mp3')">
+        Song One
+      </button>
+
+      <button class="open-btn" onclick="playSelectedSong('music/song2.mp3')">
+        Song Two
+      </button>
+
+      <button class="open-btn" onclick="playSelectedSong('music/song3.mp3')">
+        Song Three
+      </button>
+    </div>
+  </div>
+
+  <script src="music.js"></script>
+</body>
+</html>

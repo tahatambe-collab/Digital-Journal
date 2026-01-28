@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page One</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page2-container">
+    <p class="romantic-text">
+      Assalamu Aleiykum
+    </p>
+
+    <button class="open-btn" onclick="goNext()">
+      For you!
+    </button>
+  </div>
+
+  <script>
+    function goNext() {
+      document.body.style.transition = "opacity 1.5s";
+      document.body.style.opacity = "0";
+
+      setTimeout(() => {
+        window.location.href = "page3.html";
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
